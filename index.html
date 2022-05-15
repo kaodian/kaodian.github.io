@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -148,6 +148,218 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/05/15/navicat%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/15/navicat%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">navicat相关知识</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-15 22:12:24 / Modified: 22:12:50" itemprop="dateCreated datePublished" datetime="2022-05-15T22:12:24+08:00">2022-05-15</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>navicat premium<br>pycharm和mysql连接时出现的错误<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43486940/article/details/124167598">https://blog.csdn.net/weixin_43486940/article/details/124167598</a><br>serverTimezone Asia/Shanghai<br>navicat设置<br><a target="_blank" rel="noopener" href="http://www.kkx.net/soft/15510.html">http://www.kkx.net/soft/15510.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/05/13/django%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/13/django%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">django连接数据库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-13 11:52:28 / Modified: 13:18:30" itemprop="dateCreated datePublished" datetime="2022-05-13T11:52:28+08:00">2022-05-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h5 id="django连接数据库"><a href="#django连接数据库" class="headerlink" title="django连接数据库"></a>django连接数据库</h5><hr>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">pycharm 默认的数据库是sqlite3</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.sqlite3&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: os.path.join(BASE_DIR, <span class="string">&#x27;db.sqlite3&#x27;</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1.</span>第一步：把sqlite3改为mysql</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;day60&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>:<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>:<span class="string">&#x27;7344395&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>:<span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;CHARSET&#x27;</span>:<span class="string">&#x27;utf8&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">2.</span>第二步：代码声明</span><br><span class="line">django默认的是mysqldb模块连接mysql,但是该模块的兼容性不好，需要</span><br><span class="line">手动改为pymysql。</span><br><span class="line">你需要告诉django不要用默认的mysqldb还是用pysql</span><br><span class="line"></span><br><span class="line"><span class="comment">#在项目名的init或任意应用名下的init文件中书写下面两句话</span></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>操作<strong>mysql</strong></p>
+<p>1.Django orm</p>
+<p>1.Django orm<br>可以简单、快速的操作数据库， 不足：封装程度太高，有时候自己要写sql语句<br>应用下面的model.py文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/05/12/2022%E5%B9%B45%E6%9C%8812%E6%97%A5-%E6%98%9F%E6%9C%9F%E5%9B%9B-pycharm-%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/12/2022%E5%B9%B45%E6%9C%8812%E6%97%A5-%E6%98%9F%E6%9C%9F%E5%9B%9B-pycharm-%E9%93%BE%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">2022年5月12日 星期四 pycharm 链接数据库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-12 15:18:45 / Modified: 16:03:54" itemprop="dateCreated datePublished" datetime="2022-05-12T15:18:45+08:00">2022-05-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="pycharm-链接数据库"><a href="#pycharm-链接数据库" class="headerlink" title="pycharm 链接数据库"></a>pycharm 链接数据库</h4><p>1.安装数据库，这种情况主要针对pycharm没有数据库的情况</p>
+<p>file —&gt;seetings—plugins ,在里面输入Database ,选择database Navigator 安装重启即可</p>
+<p>2.mysql下载安装</p>
+<ul>
+<li><p>下载地址</p>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/file/?id=511179">https://dev.mysql.com/downloads/file/?id=511179</a></p>
+</li>
+<li><p>安装方法</p>
+</li>
+</ul>
+<p>​     <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/windows10-mysql-installer.html">安装方法</a>  <a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/windows10-mysql-installer.html">https://www.runoob.com/w3cnote/windows10-mysql-installer.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -872,333 +1084,6 @@
 <p>那么我觉得就已经足够了。</p>
 <p>虽然真炒起来，市场从来不管基本面的好坏。</p>
 <p>可没起来之前，它却是你能持有拿住的信心。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/03/19/2022%E5%B9%B43%E6%9C%8819%E6%97%A5-%E6%98%9F%E6%9C%9F%E5%85%AD-%E5%B8%82%E5%9C%BA%E5%BA%95%E5%92%8C%E6%94%BF%E7%AD%96%E5%BA%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="feng">
-      <meta itemprop="description" content="啥都会">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shadouhui.cn">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/19/2022%E5%B9%B43%E6%9C%8819%E6%97%A5-%E6%98%9F%E6%9C%9F%E5%85%AD-%E5%B8%82%E5%9C%BA%E5%BA%95%E5%92%8C%E6%94%BF%E7%AD%96%E5%BA%95/" class="post-title-link" itemprop="url">2022年3月19日 星期六 市场底和政策底</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-03-19 11:18:07 / Modified: 11:25:09" itemprop="dateCreated datePublished" datetime="2022-03-19T11:18:07+08:00">2022-03-19</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>市场底和政策底</strong></p>
-<hr>
-<p>这几天无论高低，开启了“混打”模式。</p>
-<p>说白了就是，情绪真起来了。</p>
-<p>那谁还在意什么价值与价格。</p>
-<p>尤其当看到走势加速向下时。</p>
-<p>这样大脑都会被情绪所左右。</p>
-<p><strong>就好比你走在大街上。</strong></p>
-<p>突然看到一群人大呼小叫的往前跑。</p>
-<p>这个时候，你下意识地也会跟着跑。</p>
-<p>直到都跑累了，停下来后才发现。</p>
-<p>原来大家也都不知道为什么这样跑。</p>
-<p>反正就看见别人跑，自己也没多想。</p>
-<p><strong>反过来想也是如此。</strong></p>
-<p>原来大街上经常会看到一些促销活动。</p>
-<p>什么原价xxxx现在只要xxx。。。</p>
-<p>你看到很多人争先恐后地上前抢购。</p>
-<p>自己生怕买不到，于是也凑了个热闹。</p>
-<p>等人散去后，你冷静下来才发现。</p>
-<p>原来这个东西，仅值 9.9 还包邮。。。</p>
-<p><strong>这不就是市场两个阶段的缩影么？</strong></p>
-<p>高潮时，大家不谈价值也不谈价格。</p>
-<p>争先恐后地往里冲，生怕自己买不到。</p>
-<p>绝望时，大家也会看公司内在价值到底如何。</p>
-<p>争先恐后地往外跑，生怕人家把门关上。</p>
-<p>那么我们可以想想，两个阶段后。</p>
-<p>是不是会让一些人高位追涨接了盘。</p>
-<p>又会不会让一些人低位恐慌割了肉。</p>
-<p><strong>所以昨天做了个仓位调查。</strong></p>
-<p>大家的仓位各不相同。</p>
-<p>其实不怕公司内在没问题的低位品种。</p>
-<p>怕的就是那些高位的，之前涨了几倍十几倍的。</p>
-<p>结果看到腰斩了冲进去以为捡到了便宜货。</p>
-<p>最后一看腰斩后，又来了一个后脚跟斩。</p>
-<p>那么就算那之后有反弹，甚至见大底了。</p>
-<p>抄在半山腰的，恐慌也很难回到成本价。</p>
-<p>所以这些品种唯一注意的两点就可以。</p>
-<p>一个时间，一个空间。</p>
-<p>**另外我们都知道市场有两种“底”。<br>**</p>
-<p>一个是ZC底，一个是市场底。</p>
-<p>一个是信心，另一个是资金。</p>
-<p>今天午后，一些报道出来了。</p>
-<p>就好比2018年市场见底前就是如此。</p>
-<p>（没记错应该是2018年10月）</p>
-<p>当天触底回升，中阳线全天振幅4%。</p>
-<p>之后市场反复震荡了两个来月吧。</p>
-<p>ZC底后，市场又自己探出了个市场底。</p>
-<p>说白了，我告诉你可以了，可能不如你自己觉得可以了。</p>
-<p>所以市场短期无论如何波动。</p>
-<p>最多影响的还是交易者的情绪。</p>
-<p>平静过后，还是要看公司的内在，和是否有资金在里面。</p>
-<p>所以管理好仓位，别被市场的波动影响到自己的情绪。</p>
-<p>无论如何波动，按自己原有的交易计划进行。</p>
-<p>这样才能不在一波又一波的轮回中。</p>
-<p>反复踏错节奏，反复追涨杀跌。</p>
-<p>主要内容：</p>
-<ol>
-<li><p>不要被情绪所带偏了，看见一群人疯狂往前冲，自己也被带进去了，根本就不知道奔跑的原因。</p>
-</li>
-<li><p>拉伸一波后，出现了腰斩，觉得够便宜了，可能人家只是先提价，再打折，成本可能是9.9元，还包邮。</p>
-</li>
-<li><p>另外我们都知道市场有两种“底”。一个是ZC底，一个是市场底。一个是信心，另一个是资金。今天午后，一些报道出来了。就好比2018年市场见底前就是如此。（没记错应该是2018年10月）当天触底回升，中阳线全天振幅4%。之后市场反复震荡了两个来月吧。ZC底后，市场又自己探出了个市场底。说白了，我告诉你可以了，可能不如你自己觉得可以了。所以市场短期无论如何波动。最多影响的还是交易者的情绪。<strong>任何事都有一个确定，政策底之后还有一个市场底，不急，慢慢来</strong></p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/03/19/2022%E5%B9%B43%E6%9C%8819%E6%97%A5-%E6%98%9F%E6%9C%9F%E5%85%AD-%E7%9C%9F%E5%BC%BAor%E5%81%87%E5%BC%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="feng">
-      <meta itemprop="description" content="啥都会">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shadouhui.cn">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/19/2022%E5%B9%B43%E6%9C%8819%E6%97%A5-%E6%98%9F%E6%9C%9F%E5%85%AD-%E7%9C%9F%E5%BC%BAor%E5%81%87%E5%BC%BA/" class="post-title-link" itemprop="url">2022年3月19日 星期六 真强or假强</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-03-19 10:34:27 / Modified: 11:14:18" itemprop="dateCreated datePublished" datetime="2022-03-19T10:34:27+08:00">2022-03-19</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><strong>真强or 假强</strong></p>
-<p>遇到市场下跌时，例如前几天的大跌。无论是否有资金进场的品种，都或多或少地都会被下跌。此时，有人就喜欢追逐强势的。理由也很简单，就因为它“强”啊。</p>
-<p>按常理来说。市场极其不好的情况下：</p>
-<blockquote>
-<p>如果它还能强于市场的话，至少有两种可能性。</p>
-<p><strong>1.抛压实在太小了，大家都不卖了，所以强于市场。</strong></p>
-<p><strong>2. 有资金在这呵护，起到护盘作用。</strong></p>
-</blockquote>
-<p>市场极度下跌，散户肯定割肉出局，排除第一种可能，那么自己的股票不下跌，只有第二种可能：有资金呵护，起到了护盘的作用。因为有自己拖着，所以不下跌。</p>
-<p>既然有资金在这里呵护，不愿意它往下。那么这里我觉得，可能有两种情况:</p>
-<blockquote>
-<p><strong>1. 拉高后没出完货，死扛着减轻抛压。</strong></p>
-<p><strong>2.低位准备启动了，不想让人捡便宜。</strong></p>
-</blockquote>
-<p>第一种很好分辨，看看近几年的走势。在高位，有过大幅拉高的情况。</p>
-<p>如果说是第二种情况的话。那我们可以想一下，如果不着急启动。趁市场环境不好时，顺势往下洗一波不是更好？</p>
-<p>可你死扛着原地不动，不就太明显了么？明摆着在告诉场内外的资金 “我很强”。那么按照逻辑上讲，恐慌阶段都扛过来了。</p>
-<p><strong>那市场企稳后，是不是应该启动了？</strong>可如果没启动，反而逆势开始向下的话。</p>
-<p>那么我觉得又可能出现两种情况：</p>
-<p><strong>1.在强势阶段资金趁机减了仓。</strong></p>
-<p><strong>2.遇到市场再次出现恐慌情绪。</strong></p>
-<p>这两点我觉得比较好判断。市场的好坏，一眼就能看出来。如果强势阶段进行了减仓，最重要的就是“量”。有买的有卖的，双方交换筹码后才会出现“量”。</p>
-<p>**那举个例子，也是近期我观察到的。<br>**</p>
-<p><img src="https://s2.loli.net/2022/03/19/UvGhzcEZ8iOaF9w.jpg" alt="图片"></p>
-<p><strong>市场大幅回撤阶段，它非常强势。（左侧区域，上下振幅仅5%）每次要下去，盘中都被拉起。（左侧强势阶段并没有放量）</strong></p>
-<p>可市场稍有企稳，它就憋不住了。在没有任何消息与利好的情况下。短期快速拉了两个板（20%）。第三天在市场还比较平稳阶段（开盘时）。迅速砸至跌停后反复震荡。（持续放大量）</p>
-<p>这么一起一落，从哪来，又回到了哪去。</p>
-<p>（图中最右侧的起点位置）</p>
-<p>虽然整体看，是“强”啊？</p>
-<p>市场都下了一个台阶，它还在原地。</p>
-<p>可问题在于，起落之中发生了换手。</p>
-<p>尤其在这个过程中，成交量还放大的话。</p>
-<p>那么这个过程到谁把筹码换给了谁？</p>
-<p>如果用排除法来进行推理的话。</p>
-<p><strong>1：有先知先觉的资金知道好消息，趁机吸筹。</strong></p>
-<p><strong>2：遇到大市环境不好，拉高后阶段顺势减仓。</strong></p>
-<p>市场永远走在前面，我们不知道是不是有“其他人”提前知道了一些我们不知道的事情？</p>
-<p>既然第一种情况你我并不知道的话。</p>
-<p>那么如果出现了第二种情况，后面又会面临什么情况？</p>
-<p><strong>所以图中这类品种，分为两个阶段。</strong></p>
-<p>虽然整体看上去，显得确实“很强”。</p>
-<p>但实际左侧是“真强”，右侧是“假强”。</p>
-<p>所以可以用这个方法，一步步地排除。</p>
-<p>虽然这样也许会错过一些机会。</p>
-<p>但至少可以避开很多不确定性。</p>
-<hr>
-<p>主要内容：</p>
-<ol>
-<li>大盘下跌时，有些品种不下跌，横盘震荡整理，整理阶段成交量并没有放大，等到大盘企稳时，它趁机来一个拉伸，成交量急剧放大，然后又回到横盘震荡整理的位置。从哪来到哪里去，这并不是真的强，是假的强。这是资金趁机出货。</li>
-<li>大盘下跌时，一些品种已经拉伸过了，因为货还没有出完，所以强，强的目的时出货。</li>
-</ol>
-<p><strong>关于大市不好，抗跌又抗涨</strong></p>
-<blockquote>
-<p> 1.关于大市暴跌，个股抗跌；大市回暖，个股反而抗涨。？</p>
-<p>一方面看个股，另一方面还是短线情绪影响比较大吧。 举例相对低位的个股：大市跌，它不跌或者逆势，在当时那种情况下，反而吸引部分资金进场，短线又给价格推了一把，成了短期高点，这就形成了所谓“抗跌”。 一旦市场回暖，这批进场资金第一个想得反而是获利了结，离场观望。毕竟当时是“情绪”影响下进场，而非打算长期持有，缘何起缘何灭，这就形成所谓“抗涨”。 而里面有长期打算的资金，受情绪影响反而不大。总之，情绪只影响短期波动，之后个股还是会按照它的节奏。 </p>
-<p>2.补充：比如低位股里，有的实在是没太多获利盘。遇到大市不好，短时间内最后一波抛压涌出后，只有稍微有点增量进场就会涨。而高位遇到大市不好，不跌，那有可能是里面资金还没出完货，护盘。 总之，高位获利筹码，不是迫不得已不会自己打自己；低位的廉价筹码，不是迫不得已，不会自己割自己。 </p>
-<p>3.那有人会问，怎么才算高位，怎么才算低位？ 低位高位不是一个人，一个组织说的算，不然怎么政策底之后还有市场底？简而言之，低位（底）就是想割肉的人都割不动了，有资金愿意买，一点一点买出来的。这就要花时间和精力去跟踪分析。</p>
-<p> 4.一个合格的投资者，不是以躲过每一次暴跌而庆幸自矜，而是经历下跌还能站起来正确面对。弹衣堪比炮弹强，业成毁于温柔乡。</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/03/15/2022%E5%B9%B43%E6%9C%8815%E6%97%A5-%E6%98%9F%E6%9C%9F%E4%BA%8C-%E5%8F%88%E8%A7%813000%E7%82%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="feng">
-      <meta itemprop="description" content="啥都会">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shadouhui.cn">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/03/15/2022%E5%B9%B43%E6%9C%8815%E6%97%A5-%E6%98%9F%E6%9C%9F%E4%BA%8C-%E5%8F%88%E8%A7%813000%E7%82%B9/" class="post-title-link" itemprop="url">2022年3月15日 星期二 又见3000点</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-03-15 17:40:46 / Modified: 18:03:21" itemprop="dateCreated datePublished" datetime="2022-03-15T17:40:46+08:00">2022-03-15</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="又见3000点"><a href="#又见3000点" class="headerlink" title="又见3000点"></a>又见3000点</h3><p>今天的市场，已经是血流成河，伏尸百万。又见到了3000点。</p>
-<p>大盘已经跌了4个点！</p>
-<p>在这个市场里面，什么事都可以发生，某讯不也是被腰斩了吗？</p>
-<p>市场永远是对的，不会以人的意志为转移。永远是涨多了就会跌，跌多了就会涨。</p>
-<p>所以，要想在这个市场里面活着，第一是要有良好的心态。花开花落，笑看风起云涌。以一颗平常心面对一切。</p>
-<p>不要被一些鬼故事所吓倒，也不要被一些花言巧语所迷惑。</p>
-<p>第二，要控制好自己的仓位。不要满仓，谦受益，满招损。这是亘古不变的名言。仓位大了，遇到突发情况，自己的心态就会变坏。如果真正到了自己心仪的价格，也没有更多的资金去加仓。</p>
-<p>让自己的仓位做到进可攻退可守。一旦满仓了，你就可被动了，哪怕你认为够低了，也不能全部满仓，不确定的因素太多了。</p>
-<p>宁可半仓挣钱，也不能满仓被套。</p>
-<p>大的政治事件，例如战争，普京进攻乌克兰后，这一定要把自己的仓位降下来。这是常识，不确定性的因素太多了。</p>
-<p>低位潜伏，分仓买入，控制好仓位。</p>
-<p>市场的情绪，资金永远也不会改变。只要有人的存在，就要江湖！</p>
 
       
     </div>
