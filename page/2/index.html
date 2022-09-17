@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-count">48</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -148,76 +148,6 @@
 
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/05/17/2022%E5%B9%B45%E6%9C%8817%E6%97%A5-%E6%98%9F%E6%9C%9F%E4%BA%8C-django%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="feng">
-      <meta itemprop="description" content="啥都会">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shadouhui.cn">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/17/2022%E5%B9%B45%E6%9C%8817%E6%97%A5-%E6%98%9F%E6%9C%9F%E4%BA%8C-django%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-title-link" itemprop="url">2022年5月17日 星期二 django连接数据库</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-05-17 17:42:18 / Modified: 17:42:37" itemprop="dateCreated datePublished" datetime="2022-05-17T17:42:18+08:00">2022-05-17</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h5 id="django连接数据库"><a href="#django连接数据库" class="headerlink" title="django连接数据库"></a>django连接数据库</h5><hr>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">pycharm 默认的数据库是sqlite3</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.sqlite3&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: os.path.join(BASE_DIR, <span class="string">&#x27;db.sqlite3&#x27;</span>),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">1.</span>第一步：把sqlite3改为mysql</span><br><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">&#x27;default&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;ENGINE&#x27;</span>: <span class="string">&#x27;django.db.backends.mysql&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;NAME&#x27;</span>: <span class="string">&#x27;day60&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;USER&#x27;</span>:<span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PASSWORD&#x27;</span>:<span class="string">&#x27;7344395&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;PORT&#x27;</span>:<span class="string">&#x27;3306&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;CHARSET&#x27;</span>:<span class="string">&#x27;utf8&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">2.</span>第二步：代码声明</span><br><span class="line">django默认的是mysqldb模块连接mysql,但是该模块的兼容性不好，需要</span><br><span class="line">手动改为pymysql。</span><br><span class="line">你需要告诉django不要用默认的mysqldb还是用pysql</span><br><span class="line"></span><br><span class="line"><span class="comment">#在项目名的init或任意应用名下的init文件中书写下面两句话</span></span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>操作<strong>mysql</strong></p>
-<p>1.Django orm</p>
-<p>1.Django orm<br>可以简单、快速的操作数据库， 不足：封装程度太高，有时候自己要写sql语句<br>应用下面的model.py文件</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -988,6 +918,165 @@
 <p>价格上涨了，各种鬼故事都来了！在不同的位置阶段，发布的不同的消息。</p>
 <p>有些好消息，人家半年前就知道了，股价早就提前反应过了。等到到你嘴边了，已经被人家嚼过多少次了，早就没有营养了。</p>
 <p>交易是反人性的，市场的运行方向与绝大多数人的想法恰恰相反。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/03/27/2022%E5%B9%B43%E6%9C%8827%E6%97%A5-%E6%98%9F%E6%9C%9F%E6%97%A5-%E8%90%A5%E4%B8%9A%E6%94%B6%E5%85%A5%E5%92%8C%E5%87%80%E5%88%A9%E6%B6%A6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/03/27/2022%E5%B9%B43%E6%9C%8827%E6%97%A5-%E6%98%9F%E6%9C%9F%E6%97%A5-%E8%90%A5%E4%B8%9A%E6%94%B6%E5%85%A5%E5%92%8C%E5%87%80%E5%88%A9%E6%B6%A6/" class="post-title-link" itemprop="url">2022年3月27日 星期日 营业收入和净利润</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-03-27 20:53:47 / Modified: 20:54:26" itemprop="dateCreated datePublished" datetime="2022-03-27T20:53:47+08:00">2022-03-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h4 id="营业收入和净利润"><a href="#营业收入和净利润" class="headerlink" title="营业收入和净利润"></a>营业收入和净利润</h4><p>不到行情低迷，或季度报告时。</p>
+<p>一般我不太爱讲基本面的东西。</p>
+<p>毕竟短期的涨跌，与基本面没有太大关系。</p>
+<p>所以不妨我们想一想。</p>
+<p>曾经自己追涨买入时，是因为看好公司的基本面，或它未来的发展么？</p>
+<p>我想大多数人，可能买入的理由很简单。</p>
+<p>只不过是因为当时看到价格涨了，甚至开始加速涨了。</p>
+<p>反之其实也是如此。</p>
+<p>曾经自己割肉卖出时，是因为不看好公司的基本面，或它未来的发展么？</p>
+<p>我想大多数人，可能卖出的理由也很简单。</p>
+<p>因为当时看到价格跌了，甚至开始加速下跌了。</p>
+<p>所以由此也可以佐证开头说的那句话。</p>
+<p><strong>短期的涨跌，与基本面没有太大关系。</strong></p>
+<p>可话又说回来。</p>
+<p>往往低迷时，或者你自己都不确定时。</p>
+<p>那么只有多看看基本面（内在）才能增强你的持有信心。</p>
+<p>尤其是近期，又是年报，又是一季报的。</p>
+<p><strong>先说下年度报报</strong>。</p>
+<p>近期披露的年报，意义已经不大了。</p>
+<p>因为年报正式披露前，其实早就有过预报。</p>
+<p>所以近期我们经常就会看到有些公司。</p>
+<p>年报大增xxx%，结果连个高开都没有。</p>
+<p>这是因为这个业绩增长的预期，早就被消化了。</p>
+<p><strong>可一季报就不一样了。</strong></p>
+<p>俗话说，万事开头难。</p>
+<p>所以一季报如果平稳或出现增长的话。</p>
+<p>那么至少市场会给它一个更好的预期。</p>
+<p>有个误区，很多新手只喜欢看百分比。</p>
+<p>比如只看业绩快报，同比增长了xxx%。</p>
+<p>那么就会遗漏掉很多细节上的东西。</p>
+<p>所以我觉得，也不用搞得太复杂。</p>
+<p>毕竟让普通人，把业绩报告全看一遍也不现实。</p>
+<p><strong>那就主要关注两个指标就可以。</strong></p>
+<p>1：营业收入</p>
+<p>2：净利润（扣非后净利润）</p>
+<p>因为业绩快报中，我们经常会看到。</p>
+<p><strong>营业收入同比大增xxx%</strong></p>
+<p>那这个时候，我们就要去看看，净利润（扣非后）增长了多少？</p>
+<p>如果营业收入大增，净利润（扣非后）反而持平或下降的话。</p>
+<p>那么我可不可以这么认为。</p>
+<p>虽然商品卖出去的比原来更多了。</p>
+<p>但（营收-成本）反而下降了。</p>
+<p>比如业绩快报中，我们还会看到。</p>
+<p><strong>净利润（扣非后）同比大增xxx%</strong></p>
+<p>那这个时候，我们就要去看看，营业收入增长了多少？</p>
+<p>如果净利润（扣非后）大增，营业收入持平或下降的话。</p>
+<p>那么我们可不可以这么认为。</p>
+<p>虽然（营收-成本）出现了上升。</p>
+<p>但商品却比原来卖得更少了。</p>
+<p><strong>当然，如果出现“双增”或“平稳”的话是最理想的。</strong></p>
+<p>但往往我们会发现，经常会出现一增一减的情况。</p>
+<p>所以这时候，它的迷惑性就会比较大。</p>
+<p>因为有一个数据是增长的，你（想买的）都会认为它不错。</p>
+<p>相反有一个数据是下滑的，你（持仓的）也会认为它不好。</p>
+<p>**“**营业收入**”与“*<em>净利润*<em>”一定是相辅相成的。</em></em></p>
+<p>所以遇到这两项出现一增一减的时候。</p>
+<p>千万别认为基本面就变好或变坏了。</p>
+<p>一定得把这两项对照看，到底是因为什么。</p>
+<p>如果出现双增，那老规矩，对比近几年的。</p>
+<p>所以对于普通人来说。</p>
+<p>弄明白这两项之间的关系。</p>
+<p>那么我觉得就已经足够了。</p>
+<p>虽然真炒起来，市场从来不管基本面的好坏。</p>
+<p>可没起来之前，它却是你能持有拿住的信心。</p>
+<hr>
+<p><strong>主要内容</strong></p>
+<ol>
+<li>对于季报来说，主要看两个内容：<strong>营业收入和净利润（扣非后净利润）</strong></li>
+</ol>
+<p>因为业绩快报中，我们经常会看到：</p>
+<p>**营业收入同比大增xxx%**。</p>
+<p>那这个时候，我们就要去看看，<strong>净利润（扣非后）增长了多少？</strong></p>
+<p>如果营业收入大增，净利润（扣非后）反而持平或下降的话。也就是说<strong>商品卖出去的比原来更多了。但（营收-成本）反而下降了。</strong>要弄清楚到底是什么原因。</p>
+<p>比如业绩快报中，我们还会看到：</p>
+<p><strong>净利润（扣非后）同比大增xxx%</strong></p>
+<p>那这个时候，我们就要去看看，营业收入增长了多少？</p>
+<p><strong>如果净利润（扣非后）大增，营业收入持平或下降的话。</strong></p>
+<p>那么我们可不可以这么认为。</p>
+<p>虽然（营收-成本）出现了上升。</p>
+<p>但商品却比原来卖得更少了。</p>
+<p><strong>当然，如果出现“双增”或“平稳”的话是最理想的。</strong></p>
+<p>但往往我们会发现，经常会出现一增一减的情况。</p>
+<p>所以这时候，它的迷惑性就会比较大。</p>
+<p>因为有一个数据是增长的，你（想买的）都会认为它不错。</p>
+<p>相反有一个数据是下滑的，你（持仓的）也会认为它不好。</p>
+<p>**“**营业收入**”与“*<em>净利润*<em>”一定是相辅相成的。</em></em></p>
+<p>所以遇到这两项出现一增一减的时候。</p>
+<p>千万别认为基本面就变好或变坏了。</p>
+<p>一定得把这两项对照看，到底是因为什么。</p>
+<p>如果出现双增，那老规矩，对比近几年的。</p>
+<p>所以对于普通人来说。</p>
+<p>弄明白这两项之间的关系。</p>
+<p>那么我觉得就已经足够了。</p>
+<p>虽然真炒起来，市场从来不管基本面的好坏。</p>
+<p>可没起来之前，它却是你能持有拿住的信心。</p>
 
       
     </div>
