@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -152,6 +152,78 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/05/04/bs4%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/04/bs4%E5%AD%A6%E4%B9%A0%E7%BD%91%E5%9D%80/" class="post-title-link" itemprop="url">bs4学习网址</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-04 17:41:36 / Modified: 22:10:54" itemprop="dateCreated datePublished" datetime="2022-05-04T17:41:36+08:00">2022-05-04</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>2022年5月4日 星期三</strong></p>
+<hr>
+<p>bs4 学习网址</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_55742843/article/details/116535390">bs4学习网址</a></p>
+<ol>
+<li>BeautifulSoup 导入bs4库以后，你要告诉bs解析成何种代码</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line">url=<span class="string">&#x27;https://b.faloo.com/1134941.html/&#x27;</span></span><br><span class="line">domain = <span class="string">&quot;https://umei.net&quot;</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.127 Safari/537.36&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response=requests.get(url,headers=headers)</span><br><span class="line">response.encoding=<span class="string">&#x27;gbk&#x27;</span></span><br><span class="line">html = BeautifulSoup(response.text,<span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line"><span class="comment"># print(html)</span></span><br><span class="line">ul=html.select(<span class="string">&quot;div .DivTd a&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(ul))  <span class="comment">#是一个bs4对象</span></span><br><span class="line"><span class="built_in">print</span>(ul)</span><br><span class="line"><span class="built_in">print</span>(html.a) <span class="comment">#获取a标签，只能获取一个a标签，如果获取多个a标签，需要用到select或find_all</span></span><br><span class="line"><span class="built_in">print</span>(html.a.string) <span class="comment">#获取a标签中的文本</span></span><br><span class="line"><span class="built_in">print</span>(html.a[<span class="string">&#x27;href&#x27;</span>]) <span class="comment">#获取里面的属性值</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> ul:</span><br><span class="line">    <span class="built_in">print</span>(a.text)</span><br><span class="line">    <span class="built_in">print</span>(a.get(<span class="string">&#x27;href&#x27;</span>).strip(<span class="string">&#x27;//&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1128,75 +1200,6 @@
 <p>当亏损90%时，就需上涨900%，才能回本。</p>
 <p>我们可以看到当浮亏的幅度越来越大，其回本的难度也就越来越大，超过50%时，如果不补仓，回本几乎不太可能了。</p>
 <p>所以只有留足资金，在投资的基金出现浮亏时，及时补仓，把浮亏控制在40%以内，那么回本的可能性才有希望，否则就剩绝望了。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2022/02/20/2022%E5%B9%B42%E6%9C%8820%E6%97%A5-%E4%B8%8D%E4%B8%BA%E6%89%80%E5%8A%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="feng">
-      <meta itemprop="description" content="啥都会">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="shadouhui.cn">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/02/20/2022%E5%B9%B42%E6%9C%8820%E6%97%A5-%E4%B8%8D%E4%B8%BA%E6%89%80%E5%8A%A8/" class="post-title-link" itemprop="url">2022年2月20日 不为所动</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2022-02-20 16:53:21 / Modified: 17:21:46" itemprop="dateCreated datePublished" datetime="2022-02-20T16:53:21+08:00">2022-02-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="不为所动"><a href="#不为所动" class="headerlink" title="不为所动"></a>不为所动</h3><p>当市场群魔乱舞的时候，不防静下心来，好好思考一下，例如读读书，锻炼一下身体，如果一直盯着市场看，就会受到市场的影响。培养自己独处的能力，因为独处的时候，我们才能用心思考自己的行为，才不会被他人的观点所左右。</p>
-<p>老子说：致虚极，守静笃，说的就是这个道理。保持自己内心的宁静，宁静才能致远。</p>
-<hr>
-<p>价值经常迟到，全从未缺席。一时的低落或低谷，并不代表永远。</p>
-<p>股市上有些钱是我们赚不到的，因为我们不懂；有些钱是我们不能赚的，因为我们不敢；我们能赚到的是我们明白的钱，你的认知有多远，你就能走多远。人永远也不能赚到认知以外的钱。只有提高自己的认知，这才是王道。</p>
 
       
     </div>
