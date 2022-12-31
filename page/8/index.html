@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -152,6 +152,216 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2021/12/31/gitee+picto/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/12/31/gitee+picto/" class="post-title-link" itemprop="url">PicGo + Gitee(码云)实现markdown图床</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-12-31 09:28:33 / Modified: 17:02:56" itemprop="dateCreated datePublished" datetime="2021-12-31T09:28:33+08:00">2021-12-31</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="PicGo-Gitee-码云-实现markdown图床"><a href="#PicGo-Gitee-码云-实现markdown图床" class="headerlink" title="PicGo + Gitee(码云)实现markdown图床"></a>PicGo + Gitee(码云)实现markdown图床</h3><hr>
+<p><strong>前言</strong>：深感在线博客的编辑器坑太多了，文档丢失、必须联网、可移植性太差，所以开始寻找可替代的方案。</p>
+<h3 id="markdown是一门易于上手能帮助作者专心写作的文档编辑语言，它的好处太多了，建议想自己动手做笔记写博客的朋友都可以学一学，10分钟上手（我昨天晚上还不会用，今天就开始用它写博客了。。足以证明它是真的很简单）"><a href="#markdown是一门易于上手能帮助作者专心写作的文档编辑语言，它的好处太多了，建议想自己动手做笔记写博客的朋友都可以学一学，10分钟上手（我昨天晚上还不会用，今天就开始用它写博客了。。足以证明它是真的很简单）" class="headerlink" title="markdown是一门易于上手能帮助作者专心写作的文档编辑语言，它的好处太多了，建议想自己动手做笔记写博客的朋友都可以学一学，10分钟上手（我昨天晚上还不会用，今天就开始用它写博客了。。足以证明它是真的很简单）"></a><a href="https://link.zhihu.com/?target=https://baike.baidu.com/item/markdown/3245829?fr=aladdin">markdown</a>是一门易于上手能帮助作者专心写作的文档编辑语言，它的好处太多了，建议想自己动手做笔记写博客的朋友都可以学一学，10分钟上手（我昨天晚上还不会用，今天就开始用它写博客了。。足以证明它是真的很简单）</h3><h3 id="Tpyora是一款优雅的markdown编辑器，也推荐给大家，至于安装和配置，比安装word还简单，就不赘述了"><a href="#Tpyora是一款优雅的markdown编辑器，也推荐给大家，至于安装和配置，比安装word还简单，就不赘述了" class="headerlink" title="Tpyora是一款优雅的markdown编辑器，也推荐给大家，至于安装和配置，比安装word还简单，就不赘述了"></a><a href="https://link.zhihu.com/?target=https://www.typora.io/">Tpyora</a>是一款优雅的markdown编辑器，也推荐给大家，至于安装和配置，比安装word还简单，就不赘述了</h3><p>但是，这都不是重点，重点是咱们写博客的时候，总是需要<strong>插入图片</strong>的，图片存在本地的话上传到博客网站去就没法显示了，就算一个图一个图的复制粘贴上去，想移植到其他的博客网站，图就会失效，我们就需要图床</p>
+<blockquote>
+<p>图床是干什么的？<br>图床就是一个便于在博文中插入在线图片连接的个人图片仓库。设置图床之后，在自己博客中插入的图片链接就可以随时随地在线预览了，并且不会因为任何意外原因无法查看，除非自己亲自删除。</p>
+</blockquote>
+<h3 id="神奇的PicGo就是为了解决这个问题诞生的，它可以将图片上传到指定的图床上，然后返回markdown链接，直接粘贴到你的文档中，就搞定啦"><a href="#神奇的PicGo就是为了解决这个问题诞生的，它可以将图片上传到指定的图床上，然后返回markdown链接，直接粘贴到你的文档中，就搞定啦" class="headerlink" title="神奇的PicGo就是为了解决这个问题诞生的，它可以将图片上传到指定的图床上，然后返回markdown链接，直接粘贴到你的文档中，就搞定啦"></a>神奇的PicGo就是为了解决这个问题诞生的，它可以将图片上传到指定的图床上，然后返回markdown链接，直接粘贴到你的文档中，就搞定啦</h3><p>问题又来了，网上推荐七牛云阿里云都是要租赁服务器的，太麻烦还要钱，微博现在挂链接又很厉害。大部分人选择用github，但是github虽好却是国外的网站，速度终究比不上国内网站，研究了小半天，终于发现完美的解决方案</p>
+<h2 id="最终决定使用PicGo-国内的github-码云来实现markdown图床"><a href="#最终决定使用PicGo-国内的github-码云来实现markdown图床" class="headerlink" title="最终决定使用PicGo + 国内的github - 码云来实现markdown图床"></a>最终决定使用PicGo + 国内的github - <a href="https://link.zhihu.com/?target=https://gitee/com">码云</a>来实现markdown图床</h2><p>废话说到这里，开始进入正题</p>
+<hr>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><ul>
+<li>PicGo</li>
+<li>picgo-plugin-gitee-uploader插件</li>
+</ul>
+<h3 id="首先打开picgo官网，下载安装包"><a href="#首先打开picgo官网，下载安装包" class="headerlink" title="首先打开picgo官网，下载安装包"></a>首先打开<a href="https://link.zhihu.com/?target=https://github.com/Molunerfinn/PicGo">picgo官网</a>，下载安装包</h3><p><img src="https://pic2.zhimg.com/80/v2-6a5d78ebb1910843ff4d2872580d21a5_720w.png" alt="img"></p>
+<p>速度有点慢，没关系，PicGo2.1.2的安装包下面链接自取</p>
+<h3 id="安装之后打开主界面"><a href="#安装之后打开主界面" class="headerlink" title="安装之后打开主界面"></a>安装之后打开主界面</h3><p><img src="https://pic3.zhimg.com/80/v2-83da997e41df3d5a366492075e84e8c6_720w.jpg" alt="img"></p>
+<h3 id="选择最底下的插件设置，搜索gitee"><a href="#选择最底下的插件设置，搜索gitee" class="headerlink" title="选择最底下的插件设置，搜索gitee"></a>选择最底下的插件设置，搜索<strong>gitee</strong></h3><p><img src="https://pic2.zhimg.com/80/v2-e571ed50235f2f82661b5b1315419bd5_720w.jpg" alt="img"></p>
+<h3 id="点击右边的gitee-uploader-1-1-2开始安装"><a href="#点击右边的gitee-uploader-1-1-2开始安装" class="headerlink" title="点击右边的gitee-uploader 1.1.2开始安装"></a>点击右边的gitee-uploader 1.1.2开始安装</h3><blockquote>
+<p>这里注意一下，必须要先安装<a href="https://link.zhihu.com/?target=https://nodejs.org/en/">node.js</a>才能安装插件，没装的自己装一下，然后重启就行。</p>
+</blockquote>
+<p>这个地方有两个插件，我试了一遍，两个都能用，大家看心情选择，先说一下右边这个<strong>gitee-uploader 1.1.2</strong>，用不了的同学就选左边那个，我都会讲一遍配置</p>
+<hr>
+<h2 id="2-建立gitee（码云）图床库"><a href="#2-建立gitee（码云）图床库" class="headerlink" title="2. 建立gitee（码云）图床库"></a>2. 建立gitee（码云）图床库</h2><p>注册码云的方法很简单，网站引导都是中文，不多说了，我们直接建立自己的图床库。</p>
+<h3 id="点击右上角的-号，新建仓库"><a href="#点击右上角的-号，新建仓库" class="headerlink" title="点击右上角的+号，新建仓库"></a>点击右上角的+号，新建仓库</h3><p><img src="https://pic3.zhimg.com/80/v2-44a4581b8e0ac9a0bc6747ee9b507a0e_720w.jpg" alt="img"></p>
+<p>新建仓库的要点如下：</p>
+<ol>
+<li>输入一个仓库名称</li>
+<li>其次将仓库设为公开</li>
+<li>勾选使用Readme文件初始化这个仓库</li>
+</ol>
+<p><strong>这个选项勾上，这样码云会自动给你的仓库建立master分支，这点很重要!!!</strong> 我因为这点折腾了很久，因为使用github做图床picgo好像会自动帮你生成master分支，而picgo里的gitee插件不会帮你自动生成分支。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-11790828fe9ce436ea6d92fbe1c0662f_720w.jpg" alt="img"></p>
+<p>点击创建进入下一步</p>
+<hr>
+<h2 id="3-配置PicGo"><a href="#3-配置PicGo" class="headerlink" title="3. 配置PicGo"></a>3. 配置PicGo</h2><p>安装了<strong>gitee-uploader 1.1.2</strong>插件之后，我们开始配置插件</p>
+<h3 id="配置插件的要点如下："><a href="#配置插件的要点如下：" class="headerlink" title="配置插件的要点如下："></a>配置插件的要点如下：</h3><p><img src="https://pic4.zhimg.com/80/v2-7fd17e45105b65c13c9c7e260a5b6d87_720w.jpg" alt="img"></p>
+<ul>
+<li>repo：用户名/仓库名称，比如我自己的仓库leonG7/blogImage，找不到的可以直接复制仓库的url</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/80/v2-c0bc93a55fc118fb9731371af0c8a702_720w.png" alt="img"></p>
+<ul>
+<li>branch：分支，这里写上master</li>
+<li>token：填入码云的私人令牌</li>
+<li>path：路径，一般写上img</li>
+<li>customPath：提交消息，这一项和下一项customURL都不用填。在提交到码云后，会显示提交消息，插件默认提交的是 <code>Upload 图片名 by picGo - 时间</code></li>
+</ul>
+<h3 id="这个token怎么获取，下面登录进自己的码云"><a href="#这个token怎么获取，下面登录进自己的码云" class="headerlink" title="这个token怎么获取，下面登录进自己的码云"></a>这个token怎么获取，下面登录进自己的码云</h3><ol>
+<li>点击头像，进入设置</li>
+</ol>
+<p><img src="https://pic1.zhimg.com/80/v2-09207edcefff7852c91abcc3df3c5ba0_720w.png" alt="img"></p>
+<ol>
+<li>找到右边安全设置里面的私人令牌</li>
+</ol>
+<p><img src="https://pic1.zhimg.com/80/v2-bc612193330f4235b8c887dc95a77f68_720w.jpg" alt="img"></p>
+<ol>
+<li>点击<code>生成新令牌</code>，把<strong>projects</strong>这一项勾上，其他的不用勾，然后提交</li>
+</ol>
+<p><img src="https://pic4.zhimg.com/80/v2-9d8ba0adb98d509d3de8c1b615c68353_720w.jpg" alt="img"></p>
+<p>这里需要验证一下密码，验证密码之后会出来一串数字，这一串数字就是你的token，将这串数字复制到刚才的配置里面去。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-7d9e998d82ae965fe7f1ddd93d59d48a_720w.jpg" alt="img"></p>
+<blockquote>
+<p>注意：这个令牌只会明文显示一次，建议在配置插件的时候再来生成令牌，直接复制进去，搞丢了又要重新生成一个。</p>
+</blockquote>
+<h3 id="现在保存你刚才的配置，然后将它设置为默认图床，大功告成。"><a href="#现在保存你刚才的配置，然后将它设置为默认图床，大功告成。" class="headerlink" title="现在保存你刚才的配置，然后将它设置为默认图床，大功告成。"></a>现在保存你刚才的配置，然后将它设置为默认图床，大功告成。</h3><p>还有一个插件<strong>gitee 1.2.2-beta</strong>，功能差不多，<code>刚才那个能用的话就不需要用这个</code>，配置的内容有点差别，简单说一下：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-499cfcbda9cbd6c4f5c8e23f30e382cc_720w.jpg" alt="img"></p>
+<ul>
+<li>url：图床网站，这里写码云的主页 <a href="https://link.zhihu.com/?target=https://gitee.com">https://gitee.com</a></li>
+<li>owner：所有者，写上你的码云账号名，如果你不知道你的账号名，进入你刚才的仓库，浏览器url里面有</li>
+</ul>
+<p><img src="https://pic1.zhimg.com/80/v2-f782ba2cb965931f00798322d42d3e54_720w.png" alt="img"></p>
+<ul>
+<li>repo：仓库名称，只要写上仓库名称就行，比如我自己的仓库blogImage</li>
+<li>path：写上路径，一般是img，<strong>这几个项都不用加“ / “符号</strong></li>
+<li>token：刚才你获取的个人令牌，两个插件是通用的，如果你用了另一个再来用这个，它会自动读取另一个插件的部分配置，不用重新申请</li>
+<li>message：不用填</li>
+</ul>
+<hr>
+<h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h2><p>随便选一张图片上传（picgo也支持剪贴板上传，截图工具推荐win10的<em>Snipaste</em>神器！），试试看</p>
+<h3 id="超级快有木有！比github快很多，0-1秒上传，而且导入到你的markdown编辑器里面也是秒识别你的图片内容，而如果是github图床上传太慢不说可能还会出现下面这样识别不出来的问题！"><a href="#超级快有木有！比github快很多，0-1秒上传，而且导入到你的markdown编辑器里面也是秒识别你的图片内容，而如果是github图床上传太慢不说可能还会出现下面这样识别不出来的问题！" class="headerlink" title="超级快有木有！比github快很多，0.1秒上传，而且导入到你的markdown编辑器里面也是秒识别你的图片内容，而如果是github图床上传太慢不说可能还会出现下面这样识别不出来的问题！"></a>超级快有木有！比github快很多，0.1秒上传，而且导入到你的markdown编辑器里面也是秒识别你的图片内容，而如果是github图床上传太慢不说可能还会出现下面这样识别不出来的问题！</h3><p><img src="https://pic1.zhimg.com/80/v2-7d18d14d530df892f48202f683947fcc_720w.jpg" alt="img"></p>
+<h3 id="上传之后默认复制链接，直接粘贴到你的markdown编辑器里，就可以愉快的进行写作了！"><a href="#上传之后默认复制链接，直接粘贴到你的markdown编辑器里，就可以愉快的进行写作了！" class="headerlink" title="上传之后默认复制链接，直接粘贴到你的markdown编辑器里，就可以愉快的进行写作了！"></a>上传之后默认复制链接，直接粘贴到你的markdown编辑器里，就可以愉快的进行写作了！</h3><p>最后推荐一下我的博客写作套件<strong>Typora + PicGo + Snipaste</strong>，Typora写文档，Snipaste一键截图，PicGo一键上传图片返回链接。</p>
+<p>更多的内容请访问考点网公众号：ikaodian</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://shadouhui.cn/2021/12/30/%E5%8A%AA%E5%8A%9B%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%8A%AA%E5%8A%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="feng">
+      <meta itemprop="description" content="啥都会">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="shadouhui.cn">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/12/30/%E5%8A%AA%E5%8A%9B%E5%AD%A6%E4%B9%A0%EF%BC%8C%E5%8A%AA%E5%8A%9B/" class="post-title-link" itemprop="url">第一个程序</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-12-30 09:28:33 / Modified: 14:59:18" itemprop="dateCreated datePublished" datetime="2021-12-30T09:28:33+08:00">2021-12-30</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>hello world</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
